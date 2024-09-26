@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         button9=findViewById(R.id.button8);
         button=findViewById(R.id.button10);
         clear=findViewById(R.id.button11);
-        calculate=findViewById(R.id.button12);`
+        calculate=findViewById(R.id.button12);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,20 +189,19 @@ public class MainActivity extends AppCompatActivity {
                 String temp = textView.getText().toString();
                 int cash=Integer.parseInt(temp);
 
+                int numberOf1000= cash/1000;
+                int numberOf500=(cash%1000)/500;
+                int numberOf100=(cash%500)/100;
+                int numberOf50=(cash%100)/50;
+                TextView counter1000= findViewById(R.id.textView6);
+                counter1000.setText(String.valueOf(numberOf1000));
 
-            /*    int numberOf1000= number/1000;
-                int numberOf500=(number%1000)/500;
-                int numberOf100=(number%500)/100;
-                int numberOf50=(number%100)/50;*/
-             /*   TextView counter1000= findViewById(R.id.textView6);
-                counter1000.setText(cash);*/
-
-              /*  TextView counter500= findViewById(R.id.textView7);
-                counter500.setText(numberOf500);
+                TextView counter500= findViewById(R.id.textView7);
+                counter500.setText(String.valueOf(numberOf500));
                 TextView counter100= findViewById(R.id.textView8);
-                counter100.setText(numberOf100);
+                counter100.setText(String.valueOf(numberOf100));
                 TextView counter50= findViewById(R.id.textView9);
-                counter50.setText(numberOf50);*/
+                counter50.setText(String.valueOf(numberOf50));
 
             }
         });
